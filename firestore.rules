@@ -1,0 +1,10 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Public-link workspace: anyone who signs in anonymously can read/write this document.
+    // This is intentionally open to anyone with access to the app; don't store sensitive data.
+    match /sharedWorkspaces/main {
+      allow read, write: if request.auth != null;
+    }
+  }
+}
