@@ -7,34 +7,79 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<main>
-  <header>
-    <div>
-      <h1>Spazio condiviso</h1>
-      <div class="subtitle">Tabella e appunti condivisi</div>
+  <header class="page-banner" id="pageBanner">
+    <img src="./logo.jpg" alt="Banner della pagina">
+    <div class="banner-text">
+      <h1>Crowd Control Dashboard</h1>
+      <!-- <p>Appunti, idee ed eventi da condividere</p> -->
     </div>
-    <div id="status" class="status">Configurazione necessaria</div>
   </header>
-  <div class="notice">Chiunque abbia il link può leggere e modificare i contenuti. Non inserire dati personali o sensibili.</div>
-  <section>
-    <div class="section-head">
-      <h2>Tabella</h2>
-      <button id="add-row" class="primary" type="button">＋ Aggiungi riga</button>
-    </div>
-    <div class="table-wrap">
-      <table>
-        <thead><tr><th><span>Nome</span></th><th><span>Categoria</span></th><th><span>Valore</span></th><th><span>Note</span></th><th><span></span></th></tr></thead>
-        <tbody id="rows"></tbody>
-      </table>
-    </div>
-    <p class="hint">Clicca su una cella per modificarla. Le modifiche vengono salvate automaticamente.</p>
-  </section>
-  <section>
-    <div class="section-head"><h2>Appunti liberi</h2></div>
-    <textarea id="notes" placeholder="Scrivi qui gli appunti condivisi…"></textarea>
-    <p class="hint">Gli appunti vengono salvati automaticamente.</p>
-  </section>
-</main>
-<script type="module" src="./script.js"></script>
+
+  <main>
+    <header class="page-heading">
+      <div id="status" class="status">Configurazione necessaria</div>
+    </header>
+
+    <section>
+      <div class="section-head">
+        <h2>Tabella</h2>
+        <button id="add-row" class="primary" type="button">＋ Aggiungi riga</button>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th><span>Nome</span></th><th><span>Categoria</span></th><th><span>Valore</span></th><th><span>Note</span></th><th><span></span></th></tr></thead>
+          <tbody id="rows"></tbody>
+        </table>
+      </div>
+      <p class="hint">Clicca su una cella per modificarla. Le modifiche vengono salvate automaticamente.</p>
+    </section>
+
+    <section>
+      <div class="section-head"><h2>Appunti liberi</h2></div>
+      <textarea id="notes" placeholder="Scrivi qui gli appunti condivisi…"></textarea>
+      <p class="hint">Gli appunti vengono salvati automaticamente.</p>
+    </section>
+
+    <section id="events-section">
+      <div class="section-head">
+        <div>
+          <h2>Eventi</h2>
+          <p class="hint section-subtitle">Crea un evento oppure iscriviti a quello di qualcun altro.</p>
+        </div>
+        <button id="refresh-events" type="button">Aggiorna</button>
+      </div>
+
+      <form id="event-form" class="event-form">
+        <h3>Crea un evento</h3>
+        <label>Nome del creatore
+          <input id="event-creator" type="text" maxlength="40" required>
+        </label>
+        <label>Nome dell'evento
+          <input id="event-title" type="text" maxlength="100" required>
+        </label>
+        <div class="form-row">
+          <label>Data e ora
+            <input id="event-date" type="datetime-local" required>
+          </label>
+          <label>Luogo
+            <input id="event-location" type="text" maxlength="120">
+          </label>
+        </div>
+        <label>Note (facoltativa)
+          <textarea id="event-description" rows="3" maxlength="1200"></textarea>
+        </label>
+        <div class="form-actions">
+          <button class="primary" type="submit">＋ Crea evento</button>
+          <span id="event-form-status" class="form-status" aria-live="polite"></span>
+        </div>
+      </form>
+
+      <div id="events-list" class="events-list" aria-live="polite">
+        <p class="hint">Caricamento eventi…</p>
+      </div>
+    </section>
+  </main>
+
+  <script type="module" src="script.js"></script>
 </body>
 </html>
