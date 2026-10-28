@@ -4,7 +4,7 @@
         --muted: #6b7280;
         --line: #dbe1e8;
         --accent: #4f46e5;
-        --bg: #f5f7fb;
+        --bg: #808080;
     }
 
     * {
@@ -62,7 +62,7 @@
     }
 
     section {
-        background: white;
+        background: #808080;
         border: 1px solid var(--line);
         border-radius: 16px;
         padding: 20px;
@@ -88,14 +88,14 @@
         cursor: pointer;
         border: 1px solid var(--line);
         border-radius: 9px;
-        background: #fff;
+        background: #808080;
         padding: 8px 12px;
         color: var(--ink);
     }
 
     button.primary {
         background: var(--accent);
-        color: white;
+        color: #808080;
         border-color: var(--accent);
     }
 
