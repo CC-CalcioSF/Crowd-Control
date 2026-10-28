@@ -1,6 +1,6 @@
   // Inserisci qui URL e chiave publishable (o anon legacy) del tuo progetto Supabase.
-  const SUPABASE_URL = "https://TUO-PROGETTO.supabase.co";
-  const SUPABASE_KEY = "LA_TUA_CHIAVE_PUBLISHABLE";
+  const SUPABASE_URL = "https://kvnfbdfpyqvqexeezrir.supabase.co";
+  const SUPABASE_KEY = "sb_publishable_h1U1Jpkv4ndwGpH9HtvpSg_PF3DT_hp";
 
   import { createClient } from "https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/+esm";
 
